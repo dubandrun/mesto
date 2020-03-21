@@ -1,4 +1,12 @@
-(function () {
+import Api from "./api";
+import Card from "./card";
+import CardList from "./cardlist";
+import FormValidator from "./formvalidator";
+import PopupForm from "./popupform";
+import PopupImage from "./popupimage";
+import UserInfo from "./userinfo";
+
+export default function constsAndListeners() {
   const placesList = document.querySelector(".places-list");
   const addingNewCardForm = document.forms.new;
   const nameOfCard = document.forms.new.elements.name;
@@ -80,7 +88,7 @@
     editButton,
     editForm
   );
-  // Пользуйтесь деструктуризацией? пример я приводил
+
   const newCardValidator = new FormValidator(
     nameOfCard,
     linkOfCard,
@@ -89,10 +97,8 @@
   );
 
   placesList.addEventListener("click", card.like);
-  // Можно лучше -- {} -- тут лишние
-  // placesList.addEventListener("click", (event) => card.remove(event));
-  placesList.addEventListener("click", (event) => { card.remove(event) });
-  placesList.addEventListener("click", (event) => { popupImage.openImage(event) });
+  placesList.addEventListener("click", (event) => card.remove(event));
+  placesList.addEventListener("click", (event) => popupImage.openImage(event));
   addingNewCardForm.addEventListener("submit", (event) => { cardListing.renderFromForm(event) });
   editForm.addEventListener("submit", (event) => userInfo.updateUserInfo(event));
 
@@ -103,6 +109,5 @@
   popupImage.closeImage();
   editValidator.setEventListeners();
   newCardValidator.setEventListeners();
-})();
+  };
 
-// Работа принята!

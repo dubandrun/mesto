@@ -1,4 +1,4 @@
-class PopupForm {
+export default class PopupForm {
   constructor(
     userInfoButton,
     userInfoEditButton,

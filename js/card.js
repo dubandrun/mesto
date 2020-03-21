@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   create(link, name) {
     const template = `<div class="place-card">
     <div class="place-card__image" style="background: url(${link}); background-size: cover; background-position: center">

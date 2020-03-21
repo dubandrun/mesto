@@ -1,6 +1,6 @@
 {
-  "name": "dubandrun",
-  "homepage": "https://dubandrun.github.io/testweb/",
+  "name": "mesto",
+  "homepage": "https://dubandrun.github.io/mesto/",
   "version": "1.0.0",
   "description": "webpacktesting",
   "main": "index.js",
