@@ -8,5 +8,5 @@ import "./style.css";
 // import UserInfo from "../js/userinfo.js";
 // import FormValidator from "../js/formvalidator.js";
 
-import constsAndListeners from "../js/script.js";
+import constsAndListeners from "./js/script.js";
 constsAndListeners();
