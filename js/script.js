@@ -1,9 +1,9 @@
-import Api from "./api.js";
 import Card from "./card.js";
 import CardList from "./cardlist.js";
-import UserInfo from "./userinfo.js";
+import Api from "./api.js";
 import PopupForm from "./popupform.js";
 import PopupImage from "./popupimage.js";
+import UserInfo from "./userinfo.js";
 import FormValidator from "./formvalidator.js";
 
 export default function constsAndListeners() {
