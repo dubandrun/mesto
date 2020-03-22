@@ -1,10 +1,10 @@
-import Api from "./api";
-import Card from "./card";
-import CardList from "./cardlist";
-import FormValidator from "./formvalidator";
-import PopupForm from "./popupform";
-import PopupImage from "./popupimage";
-import UserInfo from "./userinfo";
+import Api from "./api.js";
+import Card from "./card.js";
+import CardList from "./cardlist.js";
+import UserInfo from "./userinfo.js";
+import PopupForm from "./popupform.js";
+import PopupImage from "./popupimage.js";
+import FormValidator from "./formvalidator.js";
 
 export default function constsAndListeners() {
   const placesList = document.querySelector(".places-list");
@@ -109,5 +109,7 @@ export default function constsAndListeners() {
   popupImage.closeImage();
   editValidator.setEventListeners();
   newCardValidator.setEventListeners();
+  // alert ("Ghbdtn");
+  // console.log("sad");
   };
 
