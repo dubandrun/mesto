@@ -10,7 +10,7 @@
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="../images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('../images/logo.svg')%>" alt="mesto logo" class="logo">
     </header>
 
     <div class="profile root__section">
@@ -30,7 +30,7 @@
 
     <div class="popup">
       <div class="popup__content">
-        <img src="../images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('../images/close.svg')%>" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" novalidate name="new">
             <input id="name" type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
@@ -44,7 +44,7 @@
 
     <div class="popup-edit">
       <div class="popup-edit__content">
-        <img src="../images/close.svg" alt="" class="popup-edit__close">
+        <img src="<%=require('../images/close.svg')%>" alt="" class="popup-edit__close">
         <h3 class="popup-edit__title">Редактировать профиль</h3>
         <form class="popup-edit__form" novalidate name="editform">
             <input id="username" type="text" name="username" class="popup-edit__input popup-edit__input_username" placeholder="Имя" required minlength="2" maxlength="30">
@@ -58,11 +58,12 @@
 
     <div class="popup-image">
       <div class="popup-image__content">
-         <img src="../images/close.svg" alt="" class="popup-image__close">
+         <img src="<%=require('../images/close.svg')%>" alt="" class="popup-image__close">
       </div>
     </div>
       
   </div>
+  <script type="module" src="./index.js"></script>
   <script type="module" src="../js/card.js"></script>
   <script type="module" src="../js/cardlist.js"></script>
   <script type="module" src="../js/api.js"></script>
@@ -71,6 +72,7 @@
   <script type="module" src="../js/userinfo.js"></script>
   <script type="module" src="../js/formvalidator.js"></script>
   <script type="module" src="../js/index.js"></script>
+  
 </body>
 </html>
 
