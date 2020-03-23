@@ -1,9 +1,0 @@
-@import url(./_active/error_active.css);
-
-.error {
-  font-size: 12px;
-  line-height: 15px;
-  color: red;
-  display: none;
-}
-
