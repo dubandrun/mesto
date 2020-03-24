@@ -45,14 +45,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/i,
-        use: [
-                (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                'css-loader', 
-                'postcss-loader'
-        ]
-      },
-      {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'file-loader?name=./vendor/[name].[ext]'
       }
