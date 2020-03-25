@@ -28,6 +28,14 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/i,
+        use: [
+          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader"
+        ]
+      },
+      {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
