@@ -38,7 +38,7 @@ function constsAndListeners() {
   const userInfoImage = document.querySelector(".user-info__photo");
   const userNameValue = document.querySelector(".usernamevalue");;
   const userinfovalue = document.querySelector(".userinfovalue");;
-  const address = "https://praktikum.tk/";
+  const address = "https://nomoreparties.co/";
   const token = "ffcebfcb-da13-4128-9a59-a7a8b53b9926";
   const id = "cohort8/";
   const pathInfo = "users/me";
@@ -106,7 +106,7 @@ function constsAndListeners() {
   placesList.addEventListener("click", card.like);
   placesList.addEventListener("click", (event) => card.remove(event));
   placesList.addEventListener("click", (event) => popupImage.openImage(event));
-  addingNewCardForm.addEventListener("submit", (event) => { cardListing.renderFromForm(event) });
+  addingNewCardForm.addEventListener("submit", (event) => cardListing.renderFromForm(event));
   editForm.addEventListener("submit", (event) => userInfo.updateUserInfo(event));
 
   cardListing.renderFromArray();
