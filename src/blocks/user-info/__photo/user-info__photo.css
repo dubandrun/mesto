@@ -5,7 +5,10 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  /* background-image: url('https://cs8.pikabu.ru/post_img/big/2016/02/04/7/145458292112119207.jpg'); */
+}
+
+.user-info__photo:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 980px) {

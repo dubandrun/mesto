@@ -10,7 +10,11 @@ export default class PopupForm {
     submitEdit,
     nameError,
     infoError,
-    userInfo
+    userInfo,
+    popUpAvatarCloseButton,
+    popUpAvatar,
+    userInfoAvatar,
+    urlError
   ) {
     this.userInfoButton = userInfoButton;
     this.userInfoEditButton = userInfoEditButton;
@@ -23,6 +27,10 @@ export default class PopupForm {
     this.nameError = nameError;
     this.infoError = infoError;
     this.userInfo = userInfo;
+    this.popUpAvatarCloseButton = popUpAvatarCloseButton;
+    this.popUpAvatar = popUpAvatar;
+    this.userInfoAvatar = userInfoAvatar;
+    this.urlError= urlError;
   }
 
   openForm() {
@@ -41,6 +49,11 @@ export default class PopupForm {
       this.infoError.textContent = " ";
     }
     );
+    this.userInfoAvatar.addEventListener("click", () => {
+      this.popUpAvatar.classList.add("popup-avatar_is-opened");
+      this.urlError.textContent = " ";
+    }
+    )
   }
 
   closeForm() {
@@ -49,6 +62,9 @@ export default class PopupForm {
     );
     this.popUpEditCloseButton.addEventListener("click", () =>
       this.popUpEdit.classList.remove("popup-edit_is-opened")
+    );
+    this.popUpAvatarCloseButton.addEventListener("click", () =>
+      this.popUpAvatar.classList.remove("popup-avatar_is-opened")
     );
   }
 }

@@ -7,7 +7,10 @@ export default class UserInfo {
     userInfoImage,
     popUpEdit,
     editForm,
-    api
+    api,
+    avatarUrl,
+    popUpAvatar,
+    profile
   ) {
     this.editingFormName = editingFormName;
     this.editingFormInfo = editingFormInfo;
@@ -17,6 +20,9 @@ export default class UserInfo {
     this.popUpEdit = popUpEdit;
     this.editForm = editForm;
     this.api = api;
+    this.avatarUrl =avatarUrl;
+    this.popUpAvatar = popUpAvatar;
+    this.profile = profile;
   }
 
   uploadUserInfo() {
@@ -25,8 +31,10 @@ export default class UserInfo {
       this.userInfoName.textContent = res.name;
       this.userInfoJob.textContent = res.about;
       this.userInfoImage.style.backgroundImage = `url(${res.avatar})`;
+      this.profile.setAttribute("myid", res._id);
+
       }
-    )
+    ) 
     .catch(error =>
       console.log(`Ошибка: ${error.message}`));
   }
@@ -49,5 +57,18 @@ export default class UserInfo {
     .catch(error =>
       console.log(`Ошибка: ${error.message}`));
   }
+
+  updateUserAvatar(event) {
+    event.preventDefault();
+    let avatar = this.avatarUrl.value;
+    this.api.updateAvatar(avatar)
+    .then(() => {
+      this.userInfoImage.style.backgroundImage = `url(${avatar})`;
+      this.popUpAvatar.classList.remove("popup-avatar_is-opened");
+    })
+    .catch(error =>
+      console.log(`Ошибка: ${error.message}`));
+  }
 }
+
 

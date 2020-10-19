@@ -6,7 +6,10 @@ export default class CardList {
     addingNewCardForm,
     linkOfCard,
     nameOfCard,
-    card
+    card,
+    likes,
+    placeCard,
+    id
   ) {
     this.container = container;
     this.api = api;
@@ -15,6 +18,9 @@ export default class CardList {
     this.linkOfCard = linkOfCard;
     this.nameOfCard = nameOfCard;
     this.card = card;
+    this.likes = likes;
+    this.placeCard = placeCard;
+    this.id = id;
   }
 
   addcard(cardtemplate) {
@@ -22,24 +28,39 @@ export default class CardList {
   }
 
   renderFromArray() {
+    // console.log(this.id);
     this.api.getCards()
       .then(res => {
         for (let data of res) {
-          const cardFromArray = this.card.create(data.link, data.name);
-          this.addcard(cardFromArray);
+          const ownerId = data.owner._id;
+          const cardId = data._id;
+          const likes = Object.keys(data.likes).length;
+          const cardFromArray = this.card.create(data.link, data.name, likes, cardId, ownerId);
+          this.addcard(cardFromArray); 
+          
+          if (data.owner._id !== document.querySelector(".profile").getAttribute("myid")) {
+            document.querySelector(".place-card__delete-icon").remove();     
+         };
         }
       })
       .catch(error => 
         console.log(`Ошибка: ${error.message}`));
   }
-
+  
   renderFromForm(event) {
     event.preventDefault();
-    const cardFromFrom = this.card.create(this.linkOfCard.value, this.nameOfCard.value);
-    this.addcard(cardFromFrom);
-    this.popUp.classList.remove("popup_is-opened");
-    this.addingNewCardForm.reset();
+    let link = this.linkOfCard.value;
+    let name = this.nameOfCard.value;
+    let likes = 0;
+    const cardFromFrom = this.card.create(link, name, likes);
+    this.api.uploadFromForm(link, name)
+    .then(() => {
+      this.addcard(cardFromFrom);
+      this.popUp.classList.remove("popup_is-opened");
+      this.addingNewCardForm.reset();
+    })    
   }
+
 }
 
 

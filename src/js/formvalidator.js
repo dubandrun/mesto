@@ -37,7 +37,6 @@ export default class FormValidator {
 
   setEventListeners() {
     this.form.addEventListener("input", this.setSubmitButtonState.bind(this));
-    this.form.addEventListener("input", this.setSubmitButtonState.bind(this));
     this.firstInput.addEventListener("input", this.checkInputValidity);
     this.secondInput.addEventListener("input", this.checkInputValidity);
   }
