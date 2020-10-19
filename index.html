@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="style.606fffb8314bc266466a.css">
+  <link rel="stylesheet" href="style.59587a6419c01dad24c2.css">
 </head>
 <body>
   <div class="root">
@@ -26,6 +26,18 @@
     </div>
 
     <div class="places-list root__section">
+    </div>
+
+    <div class="popup-avatar">
+      <div class="popup-avatar__content">
+        <img src="./images/close.svg" alt="" class="popup-avatar__close">
+        <h3 class="popup-avatar__title">Введите URL</h3>
+        <form class="popup-avatar__form" novalidate name="avatarform">
+            <input id ="avatar" type="url" name="avatarurl" class="popup-avatar__input" placeholder="Ссылка на картинку" required>
+            <span id="error-avatar" name="urlvalue" class="urlvalue error"></span>
+            <button type="submit" name="avatarbutton" class="button popup-avatar__button">+</button>
+        </form>
+      </div>  
     </div>
 
     <div class="popup">
@@ -63,7 +75,7 @@
     </div>
       
   </div>
-  <script src="main.da3483c80f03dea8eccf.js"></script>
+  <script src="main.e8b3293023b5ad837865.js"></script>
 </body>
 </html>
 
