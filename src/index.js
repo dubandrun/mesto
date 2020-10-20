@@ -14,7 +14,8 @@ import UserInfo from "./js/userinfo.js";
 
 import FormValidator from "./js/formvalidator.js";
 
-
+const preloader = document.querySelector(".preloader");
+const serverError = document.querySelector(".server-error");
 const placesList = document.querySelector(".places-list");
 const placeCard = document.querySelector(".place-card");
 const addingNewCardForm = document.forms.new;
@@ -111,7 +112,9 @@ const cardListing = new CardList(
   card,
   likes,
   placeCard,
-  myId
+  myId,
+  preloader,
+  serverError
   );
 const editValidator = new FormValidator(
   editingFormName,

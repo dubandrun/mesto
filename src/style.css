@@ -13,6 +13,9 @@
 @import url(./blocks/user-info/user-info.css);
 @import url(./blocks/popup-image/popup-image.css);
 @import url(./blocks/error/error.css);
+@import url(./blocks/hidden/hidden.css);
+@import url(./blocks/preloader/preloader.css);
+@import url(./blocks/server-error/server-error.css);
 
 body {
   background-color: #000;

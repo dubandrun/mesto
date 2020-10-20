@@ -25,7 +25,6 @@ export default class Api {
         res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
       )
       .then(info => {
-        console.log(info);
         return info;
       })
       .catch(error => {

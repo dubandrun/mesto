@@ -9,7 +9,9 @@ export default class CardList {
     card,
     likes,
     placeCard,
-    id
+    id,
+    preloader,
+    serverError
   ) {
     this.container = container;
     this.api = api;
@@ -21,14 +23,27 @@ export default class CardList {
     this.likes = likes;
     this.placeCard = placeCard;
     this.id = id;
+    this.preloader = preloader;
+    this.serverError = serverError;
   }
 
   addcard(cardtemplate) {
     this.container.insertAdjacentHTML("beforeEnd", cardtemplate);
   }
 
+  setPreloader(loading) {
+    if (loading) {
+      this.preloader.classList.remove("hidden");
+    } else {
+      this.preloader.classList.add("hidden");
+    } 
+  }
+  setError(error) {
+    if (error)  this.serverError.classList.remove("hidden");
+  }
+
   renderFromArray() {
-    // console.log(this.id);
+    this.setPreloader(true);
     this.api.getCards()
       .then(res => {
         for (let data of res) {
@@ -37,14 +52,17 @@ export default class CardList {
           const likes = Object.keys(data.likes).length;
           const cardFromArray = this.card.create(data.link, data.name, likes, cardId, ownerId);
           this.addcard(cardFromArray); 
-          
           if (data.owner._id !== document.querySelector(".profile").getAttribute("myid")) {
             document.querySelector(".place-card__delete-icon").remove();     
-         };
+          };
+          this.setPreloader(false);
         }
       })
-      .catch(error => 
-        console.log(`Ошибка: ${error.message}`));
+      .catch(error => {
+        this.setPreloader(false);
+        this.setError(true);
+        console.log(`Ошибка: ${error.message}`)
+      });
   }
   
   renderFromForm(event) {
