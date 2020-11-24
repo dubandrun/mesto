@@ -7,6 +7,7 @@
   cursor: pointer;
   transition: transform .3s linear;
   margin-bottom: 3px;
+  outline: none;
 }
 
 .place-card__like-icon_liked {
